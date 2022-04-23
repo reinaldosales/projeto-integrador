@@ -1,0 +1,72 @@
+html {
+    --green-global: #69f0ae;
+    --placeholder: #9E9E9E;
+}
+
+.pi-btn-access {
+    width: 85% !important;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
+
+.pi-btn-access.login {
+    margin: 25px 0;
+}
+
+.pi-person {
+    color: var(--green-global);
+}
+
+.pi-body-login {
+    margin-top: 50px;
+    background-color: var(--green-global);
+}
+
+
+/* Input fields */
+
+
+/* label color */
+
+.input-field label {
+    color: var(--placeholder);
+}
+
+
+/* label focus color */
+
+.input-field input[type=text]:focus+label {
+    color: var(--placeholder);
+}
+
+
+/* label underline focus color */
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid var(--placeholder);
+    box-shadow: 0 1px 0 0 var(--placeholder);
+}
+
+
+/* valid color */
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid var(--placeholder);
+    box-shadow: 0 1px 0 0 var(--placeholder);
+}
+
+
+/* invalid color */
+
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid var(--placeholder);
+    box-shadow: 0 1px 0 0 var(--placeholder);
+}
+
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+    color: var(--placeholder);
+}
