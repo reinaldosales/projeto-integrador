@@ -18,7 +18,10 @@
                     <label for="password">Senha</label>
                 </div>
             </div>
-            <input type="submit" value="Acessar" class="waves-effect btn pi-btn-access login green accent-2 z-depth-0" name="btn-Login">
+
+            <?php echo MESSAGE ?>
+
+            <button type="submit" class="waves-effect btn pi-btn-access login green accent-2 z-depth-0" name="btn-Login"> Acessar </button>
             <div class="row">
                 <p class="center"> Não tem conta? <span class="pi-link"> <a href="signin.php"> Cadastre-se </a> </span>
             </div>

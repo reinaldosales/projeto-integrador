@@ -15,6 +15,8 @@
     <!-- Import custom.css -->
     <link type="text/css" rel="stylesheet" href="assets/css/custom.css"  media="screen,projection"/>
 
-    <title> Login </title>
+    <link rel="shortcut icon" href="assets/images/gc-favicon.ico" type="image/x-icon">
+
+    <title> Controle de Gastos - Login </title>
 </head>
     

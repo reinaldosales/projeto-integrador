@@ -29,15 +29,15 @@
                         <label for="confirm-password">Confirmar Senha</label>
                     </div>
                 </div>
+                
                     <?php
                         if (!empty($errors)) :
                             foreach ($errors as $error);
                                 echo $error;
                         endif;
                     ?>
-                <div class="row">
-                    <input type="submit" value="Cadastrar" class="waves-effect btn pi-btn-access login green accent-2 z-depth-0" name="btn-Signin">
-                </div>
+
+                <button type="submit" class="waves-effect btn pi-btn-access login green accent-2 z-depth-0" name="btn-Login"> Cadastrar </button>
                 <div class="row">
                     <p class="center"> Já tem conta? <span class="pi-link"> <a href="index.php"> Entre agora </a> </span>
                 </div>

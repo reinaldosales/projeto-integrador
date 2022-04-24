@@ -1,7 +1,7 @@
 <?php
 
 use \App\entities\User;
-
+use \App\Repository\UserRepository;
 
 if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-password'])) {
     
@@ -17,11 +17,16 @@ if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-p
 
     if(empty($errors)){
         $user = new User;
+        $userRepository = new UserRepository;
     
         $user->name = $userName;
         $user->mail = $userMail;
         $user->password = $userPassword;
+        $user->creationDate = date('Y-m-d H:i:s');
+        $user->updateDate = date('Y-m-d H:i:s');
+
+        $userRepository->createUser($user);
     
-        header('Location: index.php?UserCreated=true');
+        header('Location: index.php?userCreated=success');
     }
 }
