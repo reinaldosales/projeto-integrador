@@ -15,4 +15,6 @@ class User {
     public $updateDate;
 
     public $deletionDate;
+
+    public $isAdmin;    
 }

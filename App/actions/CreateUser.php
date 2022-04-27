@@ -21,9 +21,10 @@ if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-p
     
         $user->name = $userName;
         $user->mail = $userMail;
-        $user->password = $userPassword;
+        $user->password = password_hash($userPassword, PASSWORD_DEFAULT);
         $user->creationDate = date('Y-m-d H:i:s');
         $user->updateDate = date('Y-m-d H:i:s');
+        $user->isAdmin = false;
 
         $userRepository->createUser($user);
     
