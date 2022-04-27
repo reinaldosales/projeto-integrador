@@ -4,6 +4,8 @@ use \App\entities\User;
 use \App\Repository\UserRepository;
 
 if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-password'])) {
+
+    $userRepository = new UserRepository;
     
     $errors = array();
     
@@ -12,12 +14,13 @@ if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-p
     $userPassword = $_POST['password'];
     $userConfirmPassword = $_POST['confirm-password'];
 
-    if(strcmp($userPassword, $userConfirmPassword) != 0)
-        array_push($errors, "<p class='center-align red-text'> <i class='material-icons tiny'>info</i> As senhas não correspondem. </p>");
+    $existsUser = $userRepository->getUserByMail($userMail);
+   
+    if(!empty($existsUser))
+        array_push($errors, "<p class='center-align red-text'> <i class='material-icons tiny'>info</i> E-mail já cadastrado. </p>");
 
     if(empty($errors)){
         $user = new User;
-        $userRepository = new UserRepository;
     
         $user->name = $userName;
         $user->mail = $userMail;
@@ -28,6 +31,6 @@ if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-p
 
         $userRepository->createUser($user);
     
-        header('Location: index.php?userCreated=success');
+        header('Location: index.php?success=true');
     }
 }

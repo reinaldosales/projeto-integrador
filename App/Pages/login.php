@@ -1,10 +1,8 @@
 <?php
 
 //Alter para uma pasta posteriormente
-if (isset($_GET['userCreated']))
-    define('USER_CREATED_SUCCESS', "<p class='center-align green-text'> <i class='material-icons tiny'>done</i> Usuário adicionado com sucesso! </p>");
-else
-    define('USER_CREATED_SUCCESS', '');
+if (isset($_GET['success']))
+    $userCreatedSuccess = "<p class='center-align green-text'> <i class='material-icons tiny'>done</i> Usuário adicionado com sucesso! </p>";
 
 if (isset($_GET['logout']))
     session_destroy();
@@ -16,7 +14,7 @@ if (isset($_GET['logout']))
     <div class="row">
         <div class="card-panel col l5 m6 s10 xl4 center push-l4 push-m3 push-s1 push-xl4">
             <h3>
-                <img src="assets/images/gc-favicon.ico" alt="Logo Controle de Gastos">
+                <img src="assets/images/cg-favicon.ico" alt="Logo Controle de Gastos">
             </h3>
             <i class="medium material-icons pi-person">person</i>
             <form method="POST">
@@ -34,12 +32,12 @@ if (isset($_GET['logout']))
                     </div>
                 </div>
 
-                <?php echo USER_CREATED_SUCCESS ?>
+                <?php if(isset($userCreatedSuccess)) echo $userCreatedSuccess ?>
 
                 <?php
                 if (!empty($errors)) {
-                    foreach ($errors as $error);
-                    echo $error;
+                    foreach ($errors as $error)
+                        echo $error;
                 }
                 ?>
 

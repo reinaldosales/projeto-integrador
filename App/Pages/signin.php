@@ -3,7 +3,7 @@
     <div class="row">
         <div class="card-panel col l5 m6 s10 xl4 center push-l4 push-m3 push-s1 push-xl4">
             <h3>
-                <img src="assets/images/gc-favicon.ico" alt="Logo Controle de Gastos">
+                <img src="assets/images/cg-favicon.ico" alt="Logo Controle de Gastos">
             </h3>
             <i class="medium material-icons pi-person">person_add</i>
             <form method="POST">
@@ -32,14 +32,16 @@
                     </div>
                 </div>
 
+                <p id="verify-password" class='center-align red-text'></p>
+
                 <?php
-                if (!empty($errors)) {
-                    foreach ($errors as $error);
-                    echo $error;
-                }
+                    if (!empty($errors)) {
+                        foreach ($errors as $error)
+                            echo $error;
+                    }
                 ?>
 
-                <button type="submit" class="waves-effect btn pi-btn-access login green accent-2 z-depth-0" name="btn-Login"> Cadastrar </button>
+                <button id="btn-login" type="submit" class="waves-effect btn pi-btn-access login green accent-2 z-depth-0" name="btn-Login"> Cadastrar </button>
                 <div class="row">
                     <p class="center"> Já tem conta? <span class="pi-link"> <a href="index.php"> Entre agora </a> </span>
                 </div>
