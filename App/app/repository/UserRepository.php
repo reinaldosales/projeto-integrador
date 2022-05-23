@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Connection\Database;
+use App\Entities\User;
 use \PDO;
 
 class UserRepository
@@ -20,6 +21,16 @@ class UserRepository
             'UpdateDate' => $user->updateDate,
             'IsAdmin' => $user->isAdmin
         ]);
+        
+    }
+
+    public function updateUser($user){
+        $database = new Database('user');
+
+        $database->update("UserId = $user->UserId", [
+            'Name' => $user->Name,
+            'Mail' => $user->Mail,
+        ]);
     }
 
     public static function getUserByMail($mail){
@@ -32,6 +43,18 @@ class UserRepository
 
         return $database->select($where, null, '1')
                         ->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public static function getUserById($userId){
+        $database = new Database('user');
+
+        $where = "UserId = '$userId'";
+
+        $user = $database->select($where, null, '1')
+        ->fetchAll(PDO::FETCH_OBJ);
+
+        return $database->select($where, null, '1')
+                        ->fetchObject(self::class);
     }
 
     public static function getAllUsers(){

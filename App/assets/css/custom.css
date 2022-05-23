@@ -1,6 +1,7 @@
 html {
-    --green-global: #69f0ae;
+    --global-color: #283593;
     --placeholder: #9E9E9E;
+    --white-color: #fff;
 }
 
 .pi-btn-access {
@@ -15,7 +16,7 @@ html {
 }
 
 .pi-person {
-    color: var(--green-global);
+    color: var(--global-color);
 }
 
 .pi-body-login {
@@ -23,7 +24,12 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--green-global);
+    background-color: var(--global-color);
+}
+
+.pi-link {
+    color: var(--global-color) !important;
+    font-weight: bold;
 }
 
 
@@ -72,4 +78,45 @@ html {
 
 .input-field .prefix.active {
     color: var(--placeholder);
+}
+
+
+/* Dashboard styles */
+
+header,
+main,
+footer {
+    padding-left: 300px !important;
+}
+
+@media only screen and (max-width: 992px) {
+    header,
+    main,
+    footer {
+        padding-left: 0 !important;
+    }
+}
+
+
+/* Dropdown */
+
+.dropdown-content li:hover,
+.dropdown-content li.active,
+.dropdown-content li.selected {
+    background-color: var(--global-color) !important;
+}
+
+.dropdown-content>li>a {
+    color: var(--white-color) !important;
+}
+
+.dropdown-content {
+    width: 150px !important;
+}
+
+
+/* Icons */
+
+.img-icon {
+    vertical-align: middle;
 }

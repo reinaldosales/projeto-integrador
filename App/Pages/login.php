@@ -14,7 +14,7 @@ if (isset($_GET['logout']))
     <div class="row">
         <div class="card-panel col l5 m6 s10 xl4 center push-l4 push-m3 push-s1 push-xl4">
             <h3>
-                <img src="assets/images/cg-favicon.ico" alt="Logo Controle de Gastos">
+                <img src="assets/images/logo.svg" alt="Logo Controle de Gastos">
             </h3>
             <i class="medium material-icons pi-person">person</i>
             <form method="POST">
@@ -41,9 +41,9 @@ if (isset($_GET['logout']))
                 }
                 ?>
 
-                <button type="submit" class="waves-effect btn pi-btn-access login green accent-2 z-depth-0" name="btn-Login"> Acessar </button>
+                <button type="submit" class="waves-effect btn pi-btn-access indigo darken-3 z-depth-0 login" name="btn-Login"> Acessar </button>
                 <div class="row">
-                    <p class="center"> Não tem conta? <span class="pi-link"> <a href="signin.php"> Cadastre-se </a> </span>
+                    <p class="center"> Não tem conta? <span> <a href="signin.php" class="pi-link"> Cadastre-se </a> </span>
                 </div>
             </form>
         </div>
