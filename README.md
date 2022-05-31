@@ -26,11 +26,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - CSS
 - JavaScript
 - PHP
+- JQuery
+- Composer
+- Materialize
 
 ## 💻 Projeto
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/BxJYFRArPLbXUK3TPoMqve/ProjetoIntegrador?node-id=0%3A1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/BxJYFRArPLbXUK3TPoMqve/ProjetoIntegrador?node-id=0%3A1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 ---

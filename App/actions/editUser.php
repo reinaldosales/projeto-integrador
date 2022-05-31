@@ -9,13 +9,14 @@ $user = UserRepository::getUserById($userId);
 
 // echo "<pre>"; print_r($user); echo "</pre>"; exit;
 
-if (isset($_POST['email'], $_POST['name'])){
+if (isset($_POST['name'])){
     $userRepository = new UserRepository;
 
-    $user->Mail = $_POST['email'];
     $user->Name = $_POST['name'];
 
-    $userRepository->updateUser($user);
+    $success = $userRepository->updateUser($user);
+
+    header('Location: dashboard.php?editUser=true');
 }
 
 ?>

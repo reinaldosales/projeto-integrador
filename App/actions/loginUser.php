@@ -14,7 +14,7 @@ if (isset($_POST['email'], $_POST['password'])) {
 
     if(!empty($user)){
         if(password_verify($userPassword, $user[0]->Password)){
-            $_SESSION['loged'] = true;
+            $_SESSION['logged'] = true;
             $_SESSION['user_id'] = $user[0]->UserId;
             $_SESSION['user_name'] = $user[0]->Name;
             header('Location: dashboard.php');

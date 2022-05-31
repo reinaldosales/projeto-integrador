@@ -1,8 +1,16 @@
+<?php
+
+$userName = $_SESSION['user_name'];
+
+?>
+
 <div class="row">
     <ul id="slide-out" class="side-nav fixed indigo darken-3 z-depth-0">
         <div class="row">
             <h2 class="center-align white-text">
-                <img src="assets/images/cg-favicon-white-min.ico" alt="Logo Controle de Gastos">
+                <a href="dashboard.php">
+                    <img src="assets/images/cg-favicon-white-min.ico" alt="Logo Controle de Gastos">
+                </a>
             </h2>
         </div>
         <ul class="collapsible" data-collapsible="accordion">
@@ -25,7 +33,7 @@
                     </span>
                 </div>
                 <div class="collapsible-body center indigo darken-4">
-                    <a href="#" class="white-text">Gestão de Cartões</a>
+                    <a href="card.php" class="white-text"> Cadastrar Cartões </a>
                 </div>
             </li>
             <li>
