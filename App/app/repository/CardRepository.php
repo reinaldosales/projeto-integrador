@@ -44,15 +44,12 @@ class CardRepository
     }
 
     public static function getCardById($cardId){
-        // $database = new Database('card');
+        $database = new Database('card');
 
-        // $where = "UserId = '$userId'";
+        $where = "CardId = '$cardId'";
 
-        // $user = $database->select($where, null, '1')
-        // ->fetchAll(PDO::FETCH_OBJ);
-
-        // return $database->select($where, null, '1')
-        //                 ->fetchObject(self::class);
+        return $database->select($where, null, '1')
+                        ->fetchAll(PDO::FETCH_OBJ);
     }
 
     public static function getAllCards(){

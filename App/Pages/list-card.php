@@ -24,10 +24,10 @@
                             <td> Dia '. $card->ClosedDate .'</td>
                             <td>'. $card->CreationDate .'</td>
                             <td>
-                                <a href="edit-card.php?cardId='. $card->CardId .'toDelete=false">
+                                <a href="edit-card.php?cardId='. $card->CardId .'&toDelete=false">
                                     <i class="material-icons middle">create</i>
                                 </a>
-                                <a href="edit-card.php?cardId='. $card->CardId .'?toDelete=true">
+                                <a href="edit-card.php?cardId='. $card->CardId .'&toDelete=true">
                                     <i class="material-icons middle">delete</i>
                                 </a>
                             </td>
