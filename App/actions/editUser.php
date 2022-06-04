@@ -1,5 +1,8 @@
 <?php
 
+if (!$_SESSION['logged'])
+    header('Location: index.php');
+
 use \App\Repository\UserRepository;
 
 $userId = $_SESSION['user_id'];
@@ -9,7 +12,7 @@ $user = UserRepository::getUserById($userId);
 
 // echo "<pre>"; print_r($user); echo "</pre>"; exit;
 
-if (isset($_POST['name'])){
+if (isset($_POST['name'])) {
     $userRepository = new UserRepository;
 
     $user->Name = $_POST['name'];
@@ -18,5 +21,3 @@ if (isset($_POST['name'])){
 
     header('Location: dashboard.php?editUser=true');
 }
-
-?>

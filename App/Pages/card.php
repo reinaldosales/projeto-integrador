@@ -1,10 +1,3 @@
-<?php
-
-if (!$_SESSION['logged'])
-    header('Location: index.php');
-
-?>
-
 <body>
     <main>
         <div class="container">
@@ -22,7 +15,7 @@ if (!$_SESSION['logged'])
                 <form method="POST" class="center">
                     <div class="row center">
                         <div class="input-field col s8 push-s2 white-text">
-                            <input id="cardNumber" type="number" class="validate" name="cardNumber" required>
+                            <input id="cardNumber" type="text" class="validate" name="cardNumber" required maxlength="19" data-mask="#### #### #### ####">
                             <label for="cardNumber"> Número do Cartão </label>
                         </div>
                         <div class="text container s4">
@@ -33,15 +26,18 @@ if (!$_SESSION['logged'])
                             </select>
                         </div>
                         <div class="input-field col s8 push-s2 white-text">
-                            <input id="cardLimit" type="number" class="validate" name="cardLimit" required>
+                            <input id="cardLimit" type="text" class="validate" name="cardLimit" required data-mask="R$##.#">
                             <label for="cardLimit"> Limite do Cartão </label>
                         </div>
                         <div class="input-field col s8 push-s2 white-text">
-                            <input id="currentValue" type="number" class="validate" name="currentValue" required>
+                            <input id="currentValue" type="text" class="validate" name="currentValue" required data-mask="R$##.#">
                             <label for="currentValue"> Valor atual </label>
-
-                            <input type="date" name="date" id="date">
                         </div>
+                        <div class="input-field col s8 push-s2 white-text">
+                            <p> Dia do fechamento </p>
+                            <input type="text" name="date" id="date" data-mask="00">
+                        </div>
+
                     </div>
                     <button type="submit" class="waves-effect btn pi-btn-access white indigo-text z-depth-0 right-align" name="btn-Save"> Salvar </button>
                 </form>

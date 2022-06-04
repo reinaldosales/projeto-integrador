@@ -35,6 +35,9 @@ $userName = $_SESSION['user_name'];
                 <div class="collapsible-body center indigo darken-4">
                     <a href="card.php" class="white-text"> Cadastrar Cartões </a>
                 </div>
+                <div class="collapsible-body center indigo darken-4">
+                    <a href="list-card.php" class="white-text"> Listar Cartões </a>
+                </div>
             </li>
             <li>
                 <div class="collapsible-header white-text">

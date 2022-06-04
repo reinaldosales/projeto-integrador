@@ -15,6 +15,8 @@ class Card {
 
     public $closedDate;
 
+    public $userId;
+
     public $creationDate;
 
     public $updateDate;

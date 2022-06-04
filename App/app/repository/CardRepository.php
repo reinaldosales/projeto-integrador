@@ -19,6 +19,7 @@ class CardRepository
             'LimitValue' => $card->limitValue,
             'CurrentValue' => $card->currentValue,
             'ClosedDate' => $card->closedDate,
+            'UserId' => $card->userId,
             'CreationDate' => $card->creationDate,
             'UpdateDate' => $card->updateDate,
         ]);
@@ -57,6 +58,15 @@ class CardRepository
     public static function getAllCards(){
         return (new Database('card'))->select()
                                      ->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public static function getCardsByUserId($userId){
+        $database = new Database('card');
+
+        $where = "UserId = '$userId'";
+
+        return $database->select($where, null, null)
+                        ->fetchAll(PDO::FETCH_OBJ);
     }
 
 }

@@ -31,18 +31,25 @@ $('.datepicker').pickadate({
     container: undefined, // ex. 'body' will append picker to body
 });
 
+/* MASKS */
 
 
 /* TOASTS JAVASCRIPT */
 
 // Valida se há na url a string editUser=true, se sim adiciona um toast à tela
-if (currentUrl.includes('editUser=true')) {
+if (currentUrl.includes('editUser')) {
     var $toastContent = $('<span>Usuário editado com sucesso!</span>');
     Materialize.toast($toastContent, 3000);
 }
 
 // Valida se há na url a string cardCreated=true, se sim adiciona um toast à tela
-if (currentUrl.includes('cardCreated=true')) {
+if (currentUrl.includes('cardCreated')) {
     var $toastContent = $('<span>Cartão cadastrado com sucesso!</span>');
     Materialize.toast($toastContent, 3000);
+}
+
+// Valida se há na url a string cardAlReadyExists=true, se sim adiciona um toast à tela
+if (currentUrl.includes('cardAlReadyExists')) {
+    var $toastContent = $('<span>Cartão já cadastrado.</span>');
+    Materialize.toast($toastContent, 4000);
 }
