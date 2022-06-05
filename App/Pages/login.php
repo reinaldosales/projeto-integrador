@@ -4,7 +4,7 @@
 if (isset($_GET['success']))
     $userCreatedSuccess = "<p class='center-align green-text'> <i class='material-icons tiny'>done</i> Usuário adicionado com sucesso! </p>";
 
-if (isset($_GET['logout'])){
+if (isset($_GET['logout']) || isset($_GET['deletedUser'])){
     session_unset();
     session_destroy();
 }

@@ -27,7 +27,12 @@
                             <label for="email" data-error="Email inválido" data-success="Tudo certo!"> E-mail </label>
                         </div>
                     </div>
-                    <button type="submit" class="waves-effect btn pi-btn-access white indigo-text z-depth-0 right-align" name="btn-Login"> Editar </button>
+                    <div class="row">
+                        <button type="submit" class="waves-effect btn pi-btn-access white indigo-text z-depth-0 right-align" name="btn-Login"> Editar </button>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="waves-effect btn pi-btn-access red white-text z-depth-0 right-align" name="btn-DeleteUser"> Excluir conta </button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -30,13 +30,14 @@ class UserRepository
         $database->update("UserId = $user->UserId", [
             'Name' => $user->Name,
             'Mail' => $user->Mail,
+            'DeletionDate' => $user->DeletionDate
         ]);
     }
 
     public static function getUserByMail($mail){
         $database = new Database('user');
 
-        $where = "Mail LIKE '%$mail%'";
+        $where = "Mail LIKE '%$mail%' AND DeletionDate IS NULL";
 
         $user = $database->select($where, null, '1')
         ->fetchAll(PDO::FETCH_OBJ);
@@ -48,7 +49,7 @@ class UserRepository
     public static function getUserById($userId){
         $database = new Database('user');
 
-        $where = "UserId = '$userId'";
+        $where = "UserId = '$userId' AND DeletionDate IS NULL";
 
         $user = $database->select($where, null, '1')
         ->fetchAll(PDO::FETCH_OBJ);

@@ -63,6 +63,9 @@ class Database{
         $fields = array_keys($values);
 
         $query = 'UPDATE ' . $this->table . ' SET '. implode('=?,', $fields) . '=? WHERE ' . $where;
+
+        // echo "<pre>"; print_r($query); echo "</pre>"; exit;
+
         $this->execute($query, array_values($values));
 
         return true;

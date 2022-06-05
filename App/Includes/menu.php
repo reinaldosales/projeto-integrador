@@ -73,8 +73,8 @@ $userName = $_SESSION['user_name'];
                     <img src="assets/icons/user.svg" alt="User" class="img-icon">
                 </a>
                 <ul id='dropdown1' class='dropdown-content indigo darken-3'>
-                    <li><a href="index.php?logout=true"> Sair </a></li>
                     <li><a href="edit-user.php"> Editar conta </a></li>
+                    <li><a href="index.php?logout=true"> Sair </a></li>
                 </ul>
             </div>
         </nav>
