@@ -53,3 +53,9 @@ if (currentUrl.includes('cardAlReadyExists')) {
     var $toastContent = $('<span>Cartão já cadastrado.</span>');
     Materialize.toast($toastContent, 4000);
 }
+
+// Valida se há na url a string avatar=true, se sim adiciona um toast à tela
+if (currentUrl.includes('avatar')) {
+    var $toastContent = $('<span>Tipo de arquivo do Avatar inválido!</span>');
+    Materialize.toast($toastContent, 4000);
+}

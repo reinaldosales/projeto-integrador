@@ -14,7 +14,7 @@
             </div>
 
             <div class="card-panel indigo darken-3 white-text">
-                <form method="POST" class="center">
+                <form method="POST" class="center" enctype="multipart/form-data">
                     <div class="row">
                         <div class="input-field col s10 push-s1">
                             <input id="name" type="text" class="validate" name="name" required value="<?php echo $user->Name ?>">
@@ -25,6 +25,17 @@
                         <div class="input-field col s10 push-s1">
                             <input disabled id="email" type="email" class="validate" name="email" required value="<?php echo $user->Mail ?>">
                             <label for="email" data-error="Email inválido" data-success="Tudo certo!"> E-mail </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="file-field input-field col s10 push-s1">
+                            <div class="btn">
+                                <span>Avatar</span>
+                                <input name="avatar" type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Selecione sua foto de perfil">
+                            </div>
                         </div>
                     </div>
                     <div class="row">

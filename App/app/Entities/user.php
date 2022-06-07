@@ -17,4 +17,6 @@ class User {
     public $deletionDate;
 
     public $isAdmin;    
+
+    public $avatar;
 }

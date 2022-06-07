@@ -30,6 +30,7 @@ class UserRepository
         $database->update("UserId = $user->UserId", [
             'Name' => $user->Name,
             'Mail' => $user->Mail,
+            'Avatar' => $user->Avatar,
             'DeletionDate' => $user->DeletionDate
         ]);
     }
