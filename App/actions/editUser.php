@@ -18,6 +18,7 @@ if (isset($_POST['btn-DeleteUser'])) {
     $userRepository->updateUser($user);
 
     header('Location: index.php');
+    
 } else if (isset($_POST['name'])) {
 
     if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] == 0) {
