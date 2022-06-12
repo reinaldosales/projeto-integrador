@@ -15,22 +15,15 @@
                 <form method="POST" class="center">
                     <div class="row center">
                         <div class="input-field col s8 push-s2 white-text">
-                            <input id="cardNumber" type="text" class="validate" name="cardNumber" required maxlength="19" value="<?php echo $card[0]->Number ?>" data-mask="#### #### #### ####">
+                            <input disabled  id="cardNumber" type="text" class="validate" name="cardNumber" required maxlength="19" value="<?php echo $card[0]->Number ?>" data-mask="#### #### #### ####">
                             <label for="cardNumber"> Número do Cartão </label>
-                        </div>
-                        <div class="text container s4">
-                            <select required class="browser-default" name="cardType">
-                                <option value="" selected disabled> Tipo do Cartão </option>
-                                <option value="debit"> Débito </option>
-                                <option value="credit"> Crédito </option>
-                            </select>
                         </div>
                         <div class="input-field col s8 push-s2 white-text">
                             <input id="cardLimit" type="text" class="validate" name="cardLimit" required value="<?php echo $card[0]->LimitValue ?>" data-mask="R$##.#">
                             <label for="cardLimit"> Limite do Cartão </label>
                         </div>
                         <div class="input-field col s8 push-s2 white-text">
-                            <input id="currentValue" type="text" class="validate" name="currentValue" value="<?php echo $card[0]->CurrentValue ?>" required data-mask="R$##.#">
+                            <input disabled id="currentValue" type="text" class="validate" name="currentValue" value="<?php echo $card[0]->CurrentValue ?>" required data-mask="R$##.#">
                             <label for="currentValue"> Valor atual </label>
                         </div>
                         <div class="input-field col s8 push-s2 white-text">

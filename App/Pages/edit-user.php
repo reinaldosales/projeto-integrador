@@ -48,7 +48,7 @@
                     <div id="modal1" class="modal">
                         <div class="modal-content white darken-3">
                             <h4 style="font-weight: bold;" class="indigo-text">Tem certeza de deseja apagar a conta?</h4>
-                            <p class="center black-text">Ao apagar sua conta, perderá todos seus dados já cadastrados, bem como acesso ao portal.</p>
+                            <p class="black-text">Ao apagar sua conta, perderá todos seus dados já cadastrados, bem como acesso ao portal.</p>
                         </div>
                         <div class="modal-footer">
                             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" >Não</a>

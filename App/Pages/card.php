@@ -21,8 +21,18 @@
                         <div class="text container s4">
                             <select required class="browser-default" name="cardType">
                                 <option value="" selected disabled> Tipo do Cartão </option>
-                                <option value="debit"> Débito </option>
-                                <option value="credit"> Crédito </option>
+                                <option value="0"> Débito </option>
+                                <option value="1"> Crédito </option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="text container s4">
+                            <select required class="browser-default" name="cardBrand">
+                                <option value="" selected disabled> Bandeira </option>
+                                <option value="0"> Cielo </option>
+                                <option value="1"> Visa </option>
+                                <option value="2"> Hipercard </option>
+                                <option value="3"> Mastercard </option>
                             </select>
                         </div>
                         <div class="input-field col s8 push-s2 white-text">

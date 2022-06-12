@@ -6,58 +6,37 @@ if (!$_SESSION['logged'])
 use \App\entities\Card;
 use \App\Repository\CardRepository;
 
-$toDelete = $_GET['toDelete'];
-$cardId = $_GET['cardId'];
-
 $cardRepository = new CardRepository;
+
+$cardId = $_GET['cardId'];
 
 $card = $cardRepository->getCardById($cardId);
 
-if ($toDelete) {
-    // code
+$cardRepository = new CardRepository;
+
+if (isset($_GET['toDelete']) && $_GET['toDelete'] == true) {
+
+    $card[0]->DeletionDate = date('Y-m-d H:i:s');
+
+    $cardRepository->updateCard($card[0]);
+
+    header('Location: dashboard.php?cardDeleted=true');
 } else {
-    if (isset($_POST['cardNumber'], $_POST['cardType'], $_POST['cardLimit'], $_POST['currentValue'], $_POST['date'])) {
-        $cardRepository = new CardRepository;
+    if (isset($_POST['cardNumber'], $_POST['cardLimit'], $_POST['currentValue'], $_POST['date'])) {
 
-        $errors = array();
-
-        $userId = $_SESSION['user_id'];
-
-        $cardNumber = $_POST['cardNumber'];
-        $cardType = $_POST['cardType'];
         $cardLimit = $_POST['cardLimit'];
-        $currentValue = $_POST['currentValue'];
-        $date = $_POST['date'];
+        $closedDate = $_POST['date'];
 
-        $cardNumber = str_replace(" ", "", $cardNumber);
-        $cardLimit = str_replace("R$", "", $cardLimit);
-        $currentValue = str_replace("R$", "", $currentValue);
+        $card[0]->cardLimit = $cardLimit;
+        $card[0]->closedDate = $closedDate;
 
-        $existsCard = $cardRepository->getCardByCardNumber($cardNumber);
+        echo "<pre>";
+        print_r($card);
+        echo "</pre>";
+        exit;
 
-        if (!empty($existsCard))
-            header("Location: dashboard.php?cardAlReadyExists=true");
+        $cardRepository->updateCard($card[0]);
 
-        if (empty($errors)) {
-            $card = new Card;
-
-            $card->cardNumber = $cardNumber;
-            $card->type = $cardType == 'debit' ? 0 : 1; // 0 = Debit | 1 = Credit
-            $card->limitValue = $cardLimit;
-            $card->currentValue = $currentValue;
-            $card->closedDate = $date;
-            $card->userId = $userId;
-            $card->creationDate = date('Y-m-d H:i:s');
-            $card->updateDate = date('Y-m-d H:i:s');
-
-            // echo "<pre>";
-            // print_r($card);
-            // echo "</pre>";
-            // exit;
-
-            $cardRepository->createCard($card);
-
-            header('Location: dashboard.php?cardCreated=true');
-        }
+        header('Location: dashboard.php?cardEdited=true');
     }
 }

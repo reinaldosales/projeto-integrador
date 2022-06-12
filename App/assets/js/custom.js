@@ -60,8 +60,20 @@ if (currentUrl.includes('cardAlReadyExists')) {
     Materialize.toast($toastContent, 4000);
 }
 
-// Valida se há na url a string avatar=true, se sim adiciona um toast à tela
+// Valida se há avatar na url a string avatar=true, se sim adiciona um toast à tela
 if (currentUrl.includes('avatar')) {
     var $toastContent = $('<span>Tipo de arquivo do Avatar inválido!</span>');
+    Materialize.toast($toastContent, 4000);
+}
+
+// Valida se há cardDeleted na url a string avatar=true, se sim adiciona um toast à tela
+if (currentUrl.includes('cardDeleted')) {
+    var $toastContent = $('<span>Cartão deletado com sucesso!</span>');
+    Materialize.toast($toastContent, 4000);
+}
+
+// Valida se há cardEdited na url a string avatar=true, se sim adiciona um toast à tela
+if (currentUrl.includes('cardEdited')) {
+    var $toastContent = $('<span>Cartão editado com sucesso!</span>');
     Materialize.toast($toastContent, 4000);
 }

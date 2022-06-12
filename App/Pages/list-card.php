@@ -22,7 +22,7 @@
                         </div>
                         <div class="col s12 m6 l4">
                             <p> Tipo </p>
-                            <select required class="browser-default" name="cardType">
+                            <select class="browser-default" name="cardType">
                                 <option value="" selected disabled> Tipo do Cartão </option>
                                 <option value="debit"> Débito </option>
                                 <option value="credit"> Crédito </option>
@@ -40,6 +40,7 @@
                     <tr>
                         <th>Número do Cartão</th>
                         <th>Tipo</th>
+                        <th>Bandeira</th>
                         <th>Limite</th>
                         <th>Valor atual</th>
                         <th>Data de fechamento</th>
@@ -52,16 +53,17 @@
                     <?php foreach ($cards as $card)
                         echo '<tr>
                             <td data-mask="#### #### #### ####">' . $card->Number . '</td>
-                            <td>' . ($card->Type == 0 ? 'Débito' : 'Crédito') . '</td>
+                            <td>' . (CardType::from($card->Type)->description()) . '</td>
+                            <td>' . (CardBrand::from($card->Brand)->description()) . '</td>
                             <td> R$' . $card->LimitValue . '</td>
                             <td> R$' . $card->CurrentValue . '</td>
                             <td> Dia ' . $card->ClosedDate . '</td>
                             <td>' . $card->CreationDate . '</td>
                             <td>
-                                <a href="edit-card.php?cardId=' . $card->CardId . '&toDelete=false">
+                                <a href="edit-card.php?cardId=' . $card->CardId . '">
                                     <i class="material-icons middle">create</i>
                                 </a>
-                                <a href="edit-card.php?cardId=' . $card->CardId . '&toDelete=true">
+                                <a href="list-card.php?cardId=' . $card->CardId . '&toDelete=true">
                                     <i class="material-icons middle">delete</i>
                                 </a>
                             </td>

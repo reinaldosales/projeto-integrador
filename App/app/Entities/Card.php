@@ -9,6 +9,8 @@ class Card {
 
     public $type;
 
+    public $brand;
+
     public $limitValue;
 
     public $currentValue;
