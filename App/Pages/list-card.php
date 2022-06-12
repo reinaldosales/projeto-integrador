@@ -55,8 +55,8 @@
                             <td data-mask="#### #### #### ####">' . $card->Number . '</td>
                             <td>' . (CardType::from($card->Type)->description()) . '</td>
                             <td>' . (CardBrand::from($card->Brand)->description()) . '</td>
-                            <td> R$' . $card->LimitValue . '</td>
-                            <td> R$' . $card->CurrentValue . '</td>
+                            <td data-mask="R$##.#"> R$' . $card->LimitValue . '</td>
+                            <td data-mask="R$##.#"> R$' . $card->CurrentValue . '</td>
                             <td> Dia ' . $card->ClosedDate . '</td>
                             <td>' . $card->CreationDate . '</td>
                             <td>

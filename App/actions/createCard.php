@@ -54,8 +54,13 @@ if (isset($_POST['cardNumber'], $_POST['cardType'], $_POST['cardBrand'], $_POST[
     $date = $_POST['date'];
 
     $cardNumber = str_replace(" ", "", $cardNumber);
+
     $cardLimit = str_replace("R$", "", $cardLimit);
+    $cardLimit = str_replace(".", "", $cardLimit);
+
     $currentValue = str_replace("R$", "", $currentValue);
+    $currentValue = str_replace(".", "", $currentValue);
+
 
     $existsCard = $cardRepository->getCardByCardNumber($cardNumber);
 

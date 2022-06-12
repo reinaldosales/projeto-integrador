@@ -26,44 +26,51 @@ class CardRepository
         ]);
     }
 
-    public function updateCard($card){
+    public function updateCard($card)
+    {
         $database = new Database('card');
 
         $database->update("CardId = $card->CardId", [
-            'DeletionDate' => $card->DeletionDate
+            'LimitValue' => $card->CardLimit,
+            'DeletionDate' => $card->DeletionDate,
+            'UpdateDate' => $card->UpdateDate,
+            'ClosedDate' => $card->ClosedDate
         ]);
     }
 
-    public static function getCardByCardNumber($cardNumber){
+    public static function getCardByCardNumber($cardNumber)
+    {
         $database = new Database('card');
 
         $where = "Number LIKE '%$cardNumber%' AND DeletionDate IS NULL";
 
         return $database->select($where, null, '1')
-                        ->fetchAll(PDO::FETCH_OBJ);
+            ->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public static function getCardById($cardId){
+    public static function getCardById($cardId)
+    {
         $database = new Database('card');
 
         $where = "CardId = '$cardId' AND DeletionDate IS NULL";
 
         return $database->select($where, null, '1')
-                        ->fetchAll(PDO::FETCH_OBJ);
+            ->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public static function getAllCards(){
+    public static function getAllCards()
+    {
         return (new Database('card'))->select('DeletionDate IS NULL')
-                                     ->fetchAll(PDO::FETCH_OBJ);
+            ->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public static function getCardsByUserId($userId){
+    public static function getCardsByUserId($userId)
+    {
         $database = new Database('card');
 
         $where = "UserId = '$userId' AND DeletionDate IS NULL";
 
         return $database->select($where, null, null)
-                        ->fetchAll(PDO::FETCH_OBJ);
+            ->fetchAll(PDO::FETCH_OBJ);
     }
-
 }
