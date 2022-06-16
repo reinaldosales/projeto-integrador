@@ -30,5 +30,12 @@ enum CardType: int
             CardType::Debit => 'Débito',
         };
     }
-}
 
+    public function value()
+    {
+        return match ($this) {
+            CardType::Credit => 0,
+            CardType::Debit => 1,
+        };
+    }
+}

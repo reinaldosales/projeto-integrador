@@ -68,9 +68,26 @@ class CardRepository
     {
         $database = new Database('card');
 
-        $where = "UserId = '$userId' AND DeletionDate IS NULL";
+        $where = "UserId = '$userId'";
 
         return $database->select($where, null, null)
+            ->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public static function getCardsByParams($userId, $cardNumber = null, $closedDate = null, $cardLimit = null, $cardType = null, $cardBrand = null)
+    {
+        $database = new Database('card');
+
+        $cardNumber = strlen($cardNumber) ? ' AND Number = ' . $cardNumber : '';
+        $closedDate = strlen($closedDate) ? ' AND ClosedDate = ' . $closedDate : '';
+        $cardLimit = strlen($cardLimit) ? ' AND LimitValue = ' . $cardLimit : '';
+        $cardType = strlen($cardType) ? ' AND Type = ' . $cardType : '';
+        $cardBrand = strlen($cardBrand) ? ' AND Brand = ' . $cardBrand : '';
+
+        $where = "UserId = '$userId' $cardNumber $closedDate $cardLimit $cardType $cardBrand";
+        $order = '1 DESC';
+        
+        return $database->select($where, $order, null)
             ->fetchAll(PDO::FETCH_OBJ);
     }
 }
