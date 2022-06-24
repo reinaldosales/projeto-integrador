@@ -77,3 +77,27 @@ if (currentUrl.includes('cardEdited')) {
     var $toastContent = $('<span>Cartão editado com sucesso!</span>');
     Materialize.toast($toastContent, 4000);
 }
+
+// Valida se há categoryCreated na url a string avatar=true, se sim adiciona um toast à tela
+if (currentUrl.includes('categoryCreated')) {
+    var $toastContent = $('<span>Categoria criada com sucesso!</span>');
+    Materialize.toast($toastContent, 4000);
+}
+
+// Valida se há categoryAlReadyExists na url a string avatar=true, se sim adiciona um toast à tela
+if (currentUrl.includes('categoryAlReadyExists')) {
+    var $toastContent = $('<span>Categoria já existe!</span>');
+    Materialize.toast($toastContent, 4000);
+}
+
+// Valida se há categoryEdited na url a string avatar=true, se sim adiciona um toast à tela
+if (currentUrl.includes('categoryEdited')) {
+    var $toastContent = $('<span>Categoria editada com sucesso!</span>');
+    Materialize.toast($toastContent, 4000);
+}
+
+// Valida se há categoryDeleted na url a string avatar=true, se sim adiciona um toast à tela
+if (currentUrl.includes('categoryDeleted')) {
+    var $toastContent = $('<span>Categoria deletada com sucesso!</span>');
+    Materialize.toast($toastContent, 4000);
+}
