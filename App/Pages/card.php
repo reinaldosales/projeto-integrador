@@ -21,8 +21,8 @@
                         <div class="text container s4">
                             <select required class="browser-default" name="cardType">
                                 <option value="" selected disabled> Tipo do Cartão </option>
-                                <option value="0"> Débito </option>
-                                <option value="1"> Crédito </option>
+                                <option value="0"> Crédito </option>
+                                <option value="1"> Débito </option>
                             </select>
                         </div>
                         <br>

@@ -59,6 +59,16 @@ class Database{
         return $this->execute($query);
     }
 
+    public function selectNoDeletionDate($where = null, $order  = null, $limit = null, $fields = '*'){
+        $where = strlen($where) ? 'WHERE ' . $where : '';
+        $order = strlen($order) ? 'ORDER BY ' . $order : '';
+        $limit = strlen($limit) ? 'LIMIT ' . $limit : '';
+
+        $query = 'SELECT ' . $fields . ' FROM ' . $this->table . ' ' . $where . ' ' . $order . ' ' . $limit;
+        
+        return $this->execute($query);
+    }
+
     public function update($where, $values){
         $fields = array_keys($values);
 

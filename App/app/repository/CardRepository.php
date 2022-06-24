@@ -38,6 +38,16 @@ class CardRepository
         ]);
     }
 
+    public function updateBalance($card)
+    {
+        $database = new Database('card');
+
+        $database->update("CardId = $card->CardId", [
+            'CurrentValue' => $card->CurrentValue,
+            'UpdateDate' => $card->UpdateDate,
+        ]);
+    }
+
     public static function getCardByCardNumber($cardNumber)
     {
         $database = new Database('card');
@@ -55,6 +65,16 @@ class CardRepository
         $where = "CardId = '$cardId' AND DeletionDate IS NULL";
 
         return $database->select($where, null, '1')
+            ->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public static function getCardByIdForRevenue($cardId)
+    {
+        $database = new Database('card');
+
+        $where = "CardId = '$cardId'";
+
+        return $database->selectNoDeletionDate($where, null, '1')
             ->fetchAll(PDO::FETCH_OBJ);
     }
 
@@ -86,7 +106,7 @@ class CardRepository
 
         $where = "UserId = '$userId' $cardNumber $closedDate $cardLimit $cardType $cardBrand";
         $order = '1 DESC';
-        
+
         return $database->select($where, $order, null)
             ->fetchAll(PDO::FETCH_OBJ);
     }

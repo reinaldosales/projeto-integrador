@@ -12,8 +12,8 @@ if (isset($_POST['email'], $_POST['password'])) {
 
     $user = $userRepository->getUserByMail($userMail);
 
-    if(!empty($user)){
-        if(password_verify($userPassword, $user[0]->Password)){
+    if (!empty($user)) {
+        if (password_verify($userPassword, $user[0]->Password)) {
             $_SESSION['logged'] = true;
             $_SESSION['user_id'] = $user[0]->UserId;
             $_SESSION['user_name'] = $user[0]->Name;
@@ -21,7 +21,7 @@ if (isset($_POST['email'], $_POST['password'])) {
         } else {
             array_push($errors, "<p class='center-align red-text'> <i class='material-icons tiny'>info</i> Usuário ou senha inválidos! </p>");
         }
-    }else{
+    } else {
         array_push($errors, "<p class='center-align red-text'> <i class='material-icons tiny'>info</i> Usuário não cadastrado. </p>");
     }
 }

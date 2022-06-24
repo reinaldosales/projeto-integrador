@@ -14,9 +14,23 @@ $userName = $_SESSION['user_name'];
             </h2>
         </div>
         <ul class="collapsible" data-collapsible="accordion">
+        <li>
+                <div class="collapsible-header white-text">
+                    <i class="material-icons">attach_money</i> Receita
+                    <span class="badge">
+                        <i class="material-icons bagde white-text">arrow_drop_down</i>
+                    </span>
+                </div>
+                <div class="collapsible-body center indigo darken-4">
+                    <a href="revenue.php" class="white-text">Cadastrar Receitas</a>
+                </div>
+                <div class="collapsible-body center indigo darken-4">
+                    <a href="list-revenue.php" class="white-text">Listar Receitas</a>
+                </div>
+            </li>
             <li>
                 <div class="collapsible-header white-text">
-                    <i class="material-icons">attach_money</i> Despesas
+                    <i class="material-icons">money_off</i> Despesas
                     <span class="badge">
                         <i class="material-icons bagde white-text">arrow_drop_down</i>
                     </span>
