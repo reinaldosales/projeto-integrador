@@ -26,6 +26,19 @@ class ExpenseRepository{
             ->fetchAll(PDO::FETCH_OBJ);
     }
     
+    public function updateExpense($expense)
+    {
+        $database = new Database('expense');
+
+        $database->update("ExpenseId = $expense->ExpenseId", [
+            'Value' => $expense->Value,
+            'DeletionDate' => $expense->DeletionDate,
+            'UpdateDate' => $expense->UpdateDate,
+        ]);
+    }
+
+
+
     public static function getExpenseByCardId($cardId)
     {
         $database = new Database('expense');
@@ -36,3 +49,16 @@ class ExpenseRepository{
             ->fetchAll(PDO::FETCH_OBJ);
     }
 }
+
+public static function getExpensesByParams($userId, $value)
+    {
+        $database = new Database('expense');
+            
+        $name = strlen($value) ? ' AND Value = ' . $value : '';
+
+        $where = "UserId = '$userId' $name";
+        $order = '1 DESC';
+
+        return $database->select($where, $order, null)
+            ->fetchAll(PDO::FETCH_OBJ);
+    }

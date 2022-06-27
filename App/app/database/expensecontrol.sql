@@ -57,6 +57,7 @@ CREATE TABLE expense(
     Value DECIMAl NOT NULL,
     Type TINYINT NOT NULL,
     CardId INT NOT NULL,
+    UserId INT NOT NULL,
     CreationDate DATE NOT NULL,
     UpdateDate DATE NOt NULL,
     DeletionDate DATE NULL
