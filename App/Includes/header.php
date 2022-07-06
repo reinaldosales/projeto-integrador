@@ -17,5 +17,7 @@
 
     <link rel="shortcut icon" href="assets/images/cg-favicon.ico" type="image/x-icon">
 
+    <script src="assets/js/sorttable.js"></script>
+
     <title> Controle de Gastos - Login </title>
 </head>
