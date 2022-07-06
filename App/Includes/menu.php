@@ -67,17 +67,6 @@ $userName = $_SESSION['user_name'];
                     <a href="list-category.php" class="white-text">Listar Categorias</a>
                 </div>
             </li>
-            <li>
-                <div class="collapsible-header white-text">
-                    <i class="material-icons">group</i> Usuários
-                    <span class="badge">
-                        <i class="material-icons bagde white-text">arrow_drop_down</i>
-                    </span>
-                </div>
-                <div class="collapsible-body center indigo darken-4">
-                    <a href="#" class="white-text">Gestão de Usuários</a>
-                </div>
-            </li>
         </ul>
     </ul>
     <main>
