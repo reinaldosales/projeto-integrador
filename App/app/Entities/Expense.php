@@ -11,6 +11,8 @@ class Expense {
 
   public $cardId;
 
+  public $userId;
+
   public $creationDate;
 
   public $updateDate;
