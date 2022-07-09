@@ -3,19 +3,19 @@
 if (!$_SESSION['logged'])
     header('Location: index.php');
 
-use \App\Repository\CategoryRepository;
+use \App\Repository\RevenueRepository;
 
 if (isset($_GET['toDelete']) && $_GET['toDelete'] == true) {
 
-    $categoryRepository = new CategoryRepository;
+    $revenueRepository = new RevenueRepository;
 
-    $categoryId = $_GET['categoryId'];
+    $revenueId = $_GET['revenueId'];
 
-    $category = $categoryRepository->getCategoryById($categoryId);
+    $revenue = $revenueRepository->getRevenueById($revenueId);
 
-    $category[0]->DeletionDate = date('Y-m-d H:i:s');
+    $revenue[0]->DeletionDate = date('Y-m-d H:i:s');
 
-    $categoryRepository->updateCategory($category[0]);
+    $revenueRepository->updateRevenue($revenue[0]);
 
-    header('Location: dashboard.php?categoryDeleted=true');
+    header('Location: dashboard.php?revenueDeleted=true');
 }

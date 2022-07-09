@@ -36,7 +36,10 @@ $userName = $_SESSION['user_name'];
                     </span>
                 </div>
                 <div class="collapsible-body center indigo darken-4">
-                    <a href="#" class="white-text">Gestão de Despesas</a>
+                    <a href="expense.php" class="white-text">Cadastrar despesas</a>
+                </div>
+                <div class="collapsible-body center indigo darken-4">
+                    <a href="list-expense.php" class="white-text">Listar despesas</a>
                 </div>
             </li>
             <li>

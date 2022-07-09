@@ -24,13 +24,12 @@ class RevenueRepository
 
     public function updateRevenue($revenue)
     {
-        // $database = new Database('revenue');
+        $database = new Database('revenue');
 
-        // $database->update("RevenueId = $revenue->RevenueId", [
-        //     'Name' => $revenue->Name,
-        //     'DeletionDate' => $revenue->DeletionDate,
-        //     'UpdateDate' => $revenue->UpdateDate,
-        // ]);
+        $database->update("RevenueId = $revenue->RevenueId", [
+            'DeletionDate' => $revenue->DeletionDate,
+            'UpdateDate' => $revenue->UpdateDate,
+        ]);
     }
 
     public static function getRevenueById($revenueId)

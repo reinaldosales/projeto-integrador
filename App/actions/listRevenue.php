@@ -14,5 +14,5 @@ $revenues = $RevenueRepository->getRevenueByUserId($_SESSION['user_id']);
 foreach ($revenues as $revenue) {
     $card = CardRepository::getCardByIdForRevenue($revenue->CardId);
 
-    $revenue->CardId = substr($card[0]->Number, -4);
+    $revenue->cardId = substr($card[0]->Number, -4);
 }

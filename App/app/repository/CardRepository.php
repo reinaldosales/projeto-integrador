@@ -78,6 +78,16 @@ class CardRepository
             ->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public static function getCardByIdForExpense($cardId)
+    {
+        $database = new Database('card');
+
+        $where = "CardId = '$cardId'";
+
+        return $database->selectNoDeletionDate($where, null, '1')
+            ->fetchAll(PDO::FETCH_OBJ);
+    }
+
     public static function getAllCards()
     {
         return (new Database('card'))->select('DeletionDate IS NULL')
