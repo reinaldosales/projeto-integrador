@@ -15,6 +15,7 @@ class ExpenseRepository{
               'Value' => $expense->value,
               'Type' => $expense->type,
               'CardId' => $expense->cardId,
+              'UserId' => $expense->userId,
               'CreationDate' => $expense->creationDate,
               'UpdateDate' => $expense->updateDate,
           ]);
