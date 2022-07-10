@@ -26,14 +26,16 @@ if (isset($_POST['cardId'], $_POST['value'],$_POST['type'])) {
   $value = str_replace(".", "", $value);
 
     if($type == 1){
-      if($card[0]->limitValue < $value){
-          
+      if($card[0]->LimitValue < $value){
+        echo "erro";
+        $errors = ["erro"];
       }else{
-        $card[0]->limitValue -= $value;
+        $card[0]->LimitValue -= $value;
       }
     }else{
-      if($card[0]->currentValue < $value){
-       
+      if($card[0]->CurrentValue < $value){
+       echo "erro";
+       $errors = ["erro"];
       }else{
         $card[0]->CurrentValue -= $value;
       }
@@ -50,9 +52,10 @@ if (isset($_POST['cardId'], $_POST['value'],$_POST['type'])) {
     $expense->updateDate = date('Y-m-d H:i:s');
 
     
+    $expenseRepository->createExpense($expense);
+
     $cardRepository->updateBalance($card[0]);
 
-    $expenseRepository->createExpense($expense);
     header('Location: dashboard.php?expenseCreated=true');
   }else{
     header('Location: dashboard.php?expenseCreated=false');
