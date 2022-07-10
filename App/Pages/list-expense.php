@@ -31,7 +31,7 @@
                 </div>
                 <div class="divider"></div>
             </div>
-            <table class="striped">
+            <table class="striped sortable">
                 <thead>
                     <tr>
                         <th>Valor</th>

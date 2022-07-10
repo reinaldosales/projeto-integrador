@@ -13,6 +13,27 @@
                 </div>
             </div>
 
+            <?php
+            $avatar = null;
+
+            if ($user->Avatar != NULL) {
+                $avatar = "<img src='users/$user->Avatar' width='150' height='150' class='z-depth-2' style='border-radius: 50%;'>";
+
+                $element = "
+                        <div class='col s12 m4 push-m4 l3 push-l4 center'>
+                            <div class='card indigo darken-3'>
+                                <div class='card-content white-text'>
+                                    $avatar
+                                </div>
+                            </div>
+                        </div>
+                    ";
+            }
+
+            if ($avatar != null)
+                echo $element;
+            ?>
+
             <div class="card-panel indigo darken-3 white-text">
                 <form method="POST" class="center" enctype="multipart/form-data">
                     <div class="row">
@@ -51,7 +72,7 @@
                             <p class="black-text">Ao apagar sua conta, perderá todos seus dados já cadastrados, bem como acesso ao portal.</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" >Não</a>
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Não</a>
                             <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" name="btn-DeleteUser">Confirmar, apagar conta.</button>
                         </div>
                     </div>
