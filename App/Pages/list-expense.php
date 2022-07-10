@@ -52,6 +52,9 @@
                                 <td>' . $expense->Type . '</td>
                                 <td>' . $expense->CreationDate . '</td>
                                 <td>
+                                     <a href="edit-expense.php?expenseId=' . $expense->ExpenseId . '">
+                                        <i class="material-icons middle">create</i>
+                                    </a>
                                     <a href="list-expense.php?expenseId=' . $expense->ExpenseId . '&toDelete=true">
                                         <i class="material-icons middle">delete</i>
                                     </a>
